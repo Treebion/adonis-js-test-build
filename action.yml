@@ -1,0 +1,14 @@
+name: "AdonisJS Docker Build"
+description: "Build AdonisJS docker image"
+inputs:
+  image-name:
+    description: "The Docker image tag/name"
+    required: true
+    default: "adonis-api:latest"
+runs:
+  using: composite
+  steps:
+    - name: Install dependencies
+      run: npm ci
+    - name: Build Docker image
+      run: docker build -t "${{ inputs.image-name }}" .
