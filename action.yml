@@ -9,6 +9,8 @@ runs:
   using: composite
   steps:
     - name: Install dependencies
+      shell: bash
       run: npm ci
     - name: Build Docker image
+      shell: bash
       run: docker build -t "${{ inputs.image-name }}" .
