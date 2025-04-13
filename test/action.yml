@@ -1,8 +1,13 @@
 name: Run AdonisJS Tests
 description: "Run AdonisJS tests"
 runs:
-  using: composite  
+  using: composite
   steps:
+    - name: Install packages
+      shell: bash
+      run: npm ci --include=dev
+      working-directory: api/
+
     - name: Install dependencies
       shell: bash
       run: node ace test
