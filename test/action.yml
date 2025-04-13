@@ -11,6 +11,6 @@ runs:
     - name: Install dependencies
       shell: bash
       env:
-        NODE_ENV: "production"
+        NODE_ENV: "test"
       run: node ace test
       working-directory: api/
