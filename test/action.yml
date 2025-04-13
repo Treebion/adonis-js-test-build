@@ -1,0 +1,9 @@
+name: Run AdonisJS Tests
+description: "Run AdonisJS tests"
+runs:
+  using: composite  
+  steps:
+    - name: Install dependencies
+      shell: bash
+      run: node ace test
+      working-directory: api/
